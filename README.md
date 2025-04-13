@@ -150,7 +150,13 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 ## 📝 Notes
 
-- As for the sample request data, please refer to "Course Management.postman_collection.json"
+- Before using the Login API, make sure to manually insert test user data into the database using SQL.
+For example, insert a user with a known username, password (BCrypt encoded), and role (ADMIN, INSTRUCTOR, or STUDENT) for testing authentication.
+
+- The Login API will only work with users that already exist in the users table.
+
+- You can use the sample request data and token usage examples found in the Postman collection ***(Course Management.postman_collection.json)*** and SQL file ***(course_management_user.sql)***
+
 - No frontend included.
 
 ---
