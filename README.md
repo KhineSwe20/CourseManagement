@@ -123,7 +123,7 @@ src/main/resources
 
 ---
 
-## 🧪 MYSQL Database
+## 🗃️ MYSQL Database
 
 - **Host:** `localhost`  
 - **Port:** `3306`  
