@@ -9,9 +9,7 @@ public interface CourseService {
 
     int registerCourse(CourseRequest courseRequest);
     List<CourseDTO> getAllCourses();
-    CourseDTO getCourseById(int id);
-    void updateCourse(CourseDTO courseDTO);
-    void deleteCourseById(int id);
-
-
+    CourseDTO getCourseById(Long courseId);
+    int updateCourse(CourseRequest courseRequest);
+    int deleteCourse(Long courseId);
 }

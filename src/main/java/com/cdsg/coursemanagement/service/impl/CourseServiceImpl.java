@@ -46,17 +46,37 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseDTO getCourseById(int id) {
-        return null;
+    public CourseDTO getCourseById(Long courseId) {
+        return courseRepository.findById(courseId)
+                .map(course -> new CourseDTO(
+                        course.getId(),
+                        course.getTitle(),
+                        course.getDescription(),
+                        course.getInstructor().getUserName()))
+                .orElse(null);
     }
 
     @Override
-    public void updateCourse(CourseDTO courseDTO) {
-
+    public int updateCourse(CourseRequest courseRequest) {
+        try {
+            Course course = courseRepository.findById(courseRequest.getCourseId())
+                    .orElseThrow(() -> new RuntimeException("Course is not found"));
+            course.setTitle(courseRequest.getTitle());
+            course.setDescription(courseRequest.getDescription());
+            courseRepository.save(course);
+            return 1;
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     @Override
-    public void deleteCourseById(int id) {
-
+    public int deleteCourse(Long courseId) {
+        try {
+            courseRepository.deleteById(courseId);
+            return 1;
+        } catch (Exception e) {
+            return 0;
+        }
     }
 }

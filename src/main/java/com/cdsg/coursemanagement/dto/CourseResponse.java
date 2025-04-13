@@ -3,9 +3,11 @@ package com.cdsg.coursemanagement.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
-public class LoginResponse {
+public class CourseResponse {
 
-    private String token;
+    private List<CourseDTO> courses;
 }

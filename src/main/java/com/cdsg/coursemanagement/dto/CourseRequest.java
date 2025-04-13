@@ -13,4 +13,5 @@ public class CourseRequest {
     private String description;
 
     private String instructorName;
+    private Long courseId;
 }
