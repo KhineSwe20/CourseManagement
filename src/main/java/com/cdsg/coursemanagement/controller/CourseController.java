@@ -57,7 +57,7 @@ public class CourseController {
         CourseDTO courseDTO = courseService.getCourseById(id);
 
         if(courseDTO != null) {
-            if(courseDTO.getInstructorName().equals(username)) {
+            if(!courseDTO.getInstructorName().equals(username)) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Cannot update a course that is not owner.");
             } else {
                 courseRequest.setCourseId(id);
@@ -81,7 +81,7 @@ public class CourseController {
         String username = authentication.getName();
         CourseDTO courseDTO = courseService.getCourseById(id);
         if(courseDTO != null) {
-            if(courseDTO.getInstructorName().equals(username)) {
+            if(!courseDTO.getInstructorName().equals(username)) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Cannot delete a course that is not owner.");
             } else {
                 int result = courseService.deleteCourse(id);
