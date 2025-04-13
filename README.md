@@ -6,15 +6,15 @@ A RESTful Course Management API using Java Spring Boot with authentication and r
 
 ## 📚 Table of Contents
 
-- [Features](#features)  
-- [Tech Stack](#tech-stack)  
-- [Getting Started](#getting-started)  
-- [Running the App](#clone-build-and-run)  
-- [Authentication](#authentication)  
-- [API Endpoints](#api-endpoints)  
-- [Project Structure](#project-structure)  
-- [MYSQL Database](#mysql-database)  
-- [Notes](#notes)
+- Features
+- Tech Stack
+- Getting Started  
+- Running the App
+- Authentication
+- API Endpoints 
+- Project Structure
+- MYSQL Database
+- Notes
 
 ---
 
@@ -49,7 +49,7 @@ A RESTful Course Management API using Java Spring Boot with authentication and r
 
 ---
 
-## 📦 Clone, Build and Run
+## ⚙️ Clone, Build and Run
 
 ```bash
 git clone https://github.com/KhineSwe20/CourseManagement.git
@@ -87,7 +87,7 @@ Authorization: Bearer <your_token>
 
 ---
 
-## 🔁 API Endpoints
+## 🛠️ API Endpoints
 
 | Method | Endpoint              				| Role          | Description         								|
 |--------|--------------------------------------|---------------|--------------------------------------------------	|
@@ -106,16 +106,16 @@ Authorization: Bearer <your_token>
 
 ```bash
 src/main/java/com/cdsg/coursemanagement
-├── config            # Security configuration
-├── controller        # REST controllers (Course, Enrollment, Login)
-├── dto               # Data Transfer Objects
-├── entity            # JPA entities (BaseEntity, Course, Enrollment, User)
-├── enums			  # Enum class for User Role (ADMIN, INSTRUCTOR, STUDENT)
-├── repository        # Spring Data JPA repositories
-├── security          # JWT filters, token utilities
-├── service           # Service interface (business logic)
-├── service/impl      # Service implementations
-├── util		      # Utility and constant classes
+├── config            	# Security configuration
+├── controller        	# REST controllers (Course, Enrollment, Login)
+├── dto               	# Data Transfer Objects
+├── entity            	# JPA entities (BaseEntity, Course, Enrollment, User)
+├── enums				# Enum class for User Role (ADMIN, INSTRUCTOR, STUDENT)
+├── repository        	# Spring Data JPA repositories
+├── security          	# JWT filters, token utilities
+├── service           	# Service interface (business logic)
+├── service/impl      	# Service implementations
+├── util				# Utility and constant classes
 
 src/main/resources
 └── application.properties # Spring Boot Application Config
@@ -137,8 +137,8 @@ Make sure to create the database manually or enable `spring.jpa.hibernate.ddl-au
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/course_management?useSSL=false&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=root
+spring.datasource.username=<your_mysql_user>
+spring.datasource.password=<your_mysql_password>
 
 spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql=true
