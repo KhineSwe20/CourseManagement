@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0de9543d-a0f0-49c9-98d4-75b116220c8f",
+		"_postman_id": "d7e8425c-fd01-4f2c-800c-6cf29d013f12",
 		"name": "Course Management",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "6050118"
@@ -160,7 +160,13 @@
 					"name": "Get all courses",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/api/courses",
 							"protocol": "http",
